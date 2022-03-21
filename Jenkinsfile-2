@@ -22,7 +22,7 @@ pipeline {
 		stage('Build docker image') {
             steps {  
                 
-				 sh 'docker build -t suryareo/webapp:v1 .'
+				 sh 'docker build -t suryareo/webapp:$BUILD_NUMBER .'
 				
 				 
 				
@@ -38,7 +38,7 @@ pipeline {
 			    
                
 				
-				sh 'docker push suryareo/webapp:v1'
+				sh 'docker push suryareo/webapp:$BUILD_NUMBER'
             }
         }
 		
